@@ -38,7 +38,6 @@ app.get('/cart', function (req, res) {
     req.session.cart.push(element);
   console.log(req.session.cart);
   res.render('cart', {cart : req.session.cart
-
   });
 });
 
