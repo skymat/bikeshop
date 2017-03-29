@@ -42,6 +42,6 @@ app.get('/cart', function (req, res) {
   });
 });
 
-app.listen(80, function () {
+app.listen(process.env.PORT || 80, function () {
   console.log("Server listening on port 80");
 });
