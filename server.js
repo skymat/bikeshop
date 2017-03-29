@@ -41,6 +41,15 @@ app.get('/cart', function (req, res) {
   });
 });
 
+app.get('/delete', function (req, res) {
+    var id = req.query.id;
+    if (id && req.session.cart)
+        req.session.cart.splice(id,1);
+      res.render('cart', {cart : req.session.cart
+  });
+});
+
+
 app.listen(process.env.PORT || 80, function () {
   console.log("Server listening on port 80");
 });

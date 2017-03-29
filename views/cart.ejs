@@ -82,7 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					total += parseInt(cart[i].price, 10);							
 				%>
 				<div class="cart-header">
-				 <div class="close1"> </div>
+				 <a href="delete?id=<%= i%>" class="linkdelete" id="<%= i%>"><div class="close1"> </div></a>
 				 <div class="cart-sec">
 						<div class="cart-item cyc">
 							 <img src="images/<%= cart[i].model%>.jpg"/>
@@ -106,7 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 </div>
 		 
 		 <div class="col-md-3 cart-total">
-			 <a class="continue" href="#">Continue to basket</a>
+			 <a class="continue" href="/home">Continue to basket</a>
 			 <div class="price-details">
 				 <h3>Price Details</h3>
 				 <span>Total</span>
@@ -130,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 </div>
 </div>
 <!---->
-
+<script src="js/script.js"></script>
 </body>
 </html>
 
