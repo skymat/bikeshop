@@ -1,3 +1,4 @@
+<% if (!ajax){ %>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -26,12 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- dropdown -->
 <script src="js/jquery.easydropdown.js"></script>
 <link href="css/nav.css" rel="stylesheet" type="text/css" media="all"/>
-<script src="js/scripts.js" type="text/javascript"></script>
 <!--js-->
-
-</head>
-<body>
-<!--banner-->
 <script src="js/responsiveslides.min.js"></script>
 <script>  
     $(function () {
@@ -44,6 +40,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       });
     });
   </script>
+</head>
+
+<body>
+<!--banner-->
+<%} %>
+<div>
 <div class="banner-bg banner-sec">	
 	  <div class="container">
 			 <div class="header">
@@ -72,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 </div>	
 			
 		 <div class="col-md-9 cart-items">
-			 <h2>My Shopping Bag (<%= cart.length%>)</h2>
+			 <h2>My Shopping Bag (<span id="cartNumber"><%= cart.length%></span>)</h2>
 				
 			 
 			<%	
@@ -119,6 +121,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 	 </div>
 </div>
+<div>
+<% if (!ajax){ %>
 <!---->
 <div class="footer">
 	 <div class="container wrap">
@@ -130,7 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 </div>
 </div>
 <!---->
-<script src="js/script.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
-
+<% } %>

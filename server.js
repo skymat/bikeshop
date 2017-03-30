@@ -29,6 +29,7 @@ app.get('/home', function (req, res) {
 });
 
 app.get('/cart', function (req, res) {
+  var ajax = false;
   var model = req.query.model;
   var price = req.query.price;
   var element = {model,price};
@@ -37,15 +38,20 @@ app.get('/cart', function (req, res) {
   if (model && price)
     req.session.cart.push(element);
   console.log(req.session.cart);
-  res.render('cart', {cart : req.session.cart
+  res.render('cart', {cart : req.session.cart,ajax
   });
 });
 
 app.get('/delete', function (req, res) {
+    var ajax = false;
+    console.log();
+    //Test si on est en ajax, est dans ce cas on transmettra moins de balises dans le render (depuis un test dans l'ejs)
+    if (req.headers['x-requested-with'] == "XMLHttpRequest")
+        ajax = true;
     var id = req.query.id;
     if (id && req.session.cart)
         req.session.cart.splice(id,1);
-      res.render('cart', {cart : req.session.cart
+    res.render('cart', {cart : req.session.cart,ajax
   });
 });
 
